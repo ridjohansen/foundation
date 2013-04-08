@@ -26,13 +26,13 @@
 <a href="#" data-dropdown="drop1">Has Dropdown</a>
 <a href="#" data-dropdown="drop2">Has Content Dropdown</a>
 
-<ul id="drop1" class="f-dropdown">
+<ul id="drop1" class="f-dropdown" data-dropdown-content>
   <li><a href="#">This is a link</a></li>
   <li><a href="#">This is another</a></li>
   <li><a href="#">Yet another</a></li>
 </ul>
 
-<ul id="drop2" class="f-dropdown content">
+<ul id="drop2" class="f-dropdown content" data-dropdown-content>
   <li><a href="#">This is a link</a></li>
   <li><a href="#">This is another</a></li>
   <li><a href="#">Yet another</a></li>
@@ -57,10 +57,10 @@
         <hr>
 
         <h3>Build With Our Mixins</h3>
-        <p>We've included SCSS mixins used to style dropdowns. To use the mixin, you'll need to have the <a href="../sass.html">extension installed</a> or grab <a href="https://github.com/zurb/foundation/blob/master/scss/foundation/_foundation-global.scss">_foundation-global.scss</a> and <a href="https://github.com/zurb/foundation/blob/master/scss/foundation/components/_dropdown.scss">_dropdown.scss</a> from Github and throw them into a foundation folder in your project directory. From there, you can import the files at the top of your own SCSS stylesheet, like so:</p>
+        <p>We've included SCSS mixins used to style dropdowns. To use the mixin, you'll need to have the <a href="../sass.html">extension installed</a> or grab <a href="https://github.com/zurb/foundation/blob/master/scss/foundation/_foundation-global.scss">_foundation-global.scss</a>, <a href="https://github.com/zurb/foundation/blob/master/scss/foundation/components/_global.scss">_global.scss</a> and <a href="https://github.com/zurb/foundation/blob/master/scss/foundation/components/_dropdown.scss">_dropdown.scss</a> from Github and throw them into a foundation folder in your project directory. From there, you can import the files at the top of your own SCSS stylesheet, like so:</p>
 
 <%= code_example '
-@import "foundation/foundation-global", "foundation/dropdown";
+@import "foundation/foundation-global", "foundation/components/global", "foundation/components/dropdown";
 ', :css %>
 
         <p>If you are using the mixins, you may include the styles on whatever class or ID you'd like, just make sure you follow our markup structure:</p>
@@ -68,7 +68,7 @@
 <%= code_example '
 <a href="#" data-dropdown="drop1">Has Dropdown</a>
 
-<ul id="drop1" class="your-class-name">
+<ul id="drop1" class="your-class-name" data-dropdown-content>
   <li><a href="#">This is a link</a></li>
   <li><a href="#">This is another</a></li>
   <li><a href="#">Yet another</a></li>
@@ -152,9 +152,9 @@ $f-dropdown-list-hover-bg:        #eeeeee;', :css %>
 
     <%= code_example "
 {
-  // specify the class used for active sections
+  // specify the class used for active dropdowns
   activeClass: 'open'
-}", :json %>
+}", :js %>
 
       </div>
     </div>
@@ -174,7 +174,7 @@ $f-dropdown-list-hover-bg:        #eeeeee;', :css %>
 <div id="contentDrop" class="f-dropdown content medium" data-dropdown-content>
   <h4>Title</h4>
   <p>Some text that people will think is awesome! Some text that people will think is awesome! Some text that people will think is awesome!</p>
-  <img src="../img/demos/demo1.png">
+  <img src="../img/demos/demo1.jpg">
   <p>More test.</p>
   <a href="#" class="button">Button</a>
 </div>
