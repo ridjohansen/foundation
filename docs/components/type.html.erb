@@ -155,12 +155,18 @@
             <h6>Ordered Lists</h6>
             <ol>
               <li>List Item 1</li>
-              <li>List Item 2</li>
+              <li>List Item 2
+                <ol>
+                  <li>Nested List Item</li>
+                  <li>Nested List Item</li>
+                  <li>Nested List Item</li>
+                </ol>
+              </li>
               <li>List Item 3</li>
             </ol>
           </div>
           <div class="large-8 columns">
-            <h6>Defition Lists</h6>
+            <h6>Definition Lists</h6>
             <dl>
               <dt>Definition Title</dt>
               <dd>Definition Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam id dolor id nibh ultricies vehicula ut id elit.</dd>
@@ -246,7 +252,7 @@
           <li>Page cleanup and window minimization</li>
         </ul>
 
-        <p>On top of that, Foundation includes a couple of simple classes you can use to control elements printing, or not printing. Simply attached <code>.print-only</code> on an element to only show when printing, and <code>.hide-on-print</code> to hide something when printing.</p>
+        <p>On top of that, Foundation includes a couple of simple classes you can use to control elements printing, or not printing. Simply attach <code>.print-only</code> to an element to only show when printing, and <code>.hide-on-print</code> to hide something when printing.</p>
 
         <hr>
 
@@ -292,6 +298,7 @@ $paragraph-margin-bottom:              emCalc(20px);
 $paragraph-aside-font-size:            emCalc(14px);
 $paragraph-aside-line-height:          1.35;
 $paragraph-aside-font-style:           italic;
+$paragraph-text-rendering:             optimizeLegibility;
 
 /* We use these to style <code> tags */
 $code-color:                           darken($alert-color, 15%);

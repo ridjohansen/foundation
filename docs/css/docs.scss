@@ -7,6 +7,8 @@
 /* Coderay styles */
 .html, .css, .scss, .js { position: relative; }
 
+ul, ol, dl { list-style-position: inside; }
+
 .CodeRay:before {
   position: absolute;
   top: 6px;
@@ -18,7 +20,6 @@
 .html > .CodeRay:before { content: "HTML"; }
 .css > .CodeRay:before { content: "SCSS"; }
 .js > .CodeRay:before { content: "JS"; }
-
 
 /* Docs Footer Styles */
 .row.full-width {
@@ -47,8 +48,10 @@ footer.row.full-width {
 
 .docs.header { margin-bottom: 10px; }
 .docs.subheader {
-  float: left;
+  float: $default-float;
 }
+
+.docs.section-container a.active { font-weight: bold; }
 
 
 /* Alert Docs */
@@ -91,7 +94,7 @@ footer.row.full-width {
 
 /* Clearing Docs */
 .clearing-thumbs { list-style: none;
-  li { float: left; margin-right: 10px; }
+  li { float: $default-float; margin-#{$opposite-direction}: 10px; }
 }
 
 /* Forms Docs */
@@ -151,8 +154,8 @@ input[type="text"].attached-input {
 
 /* Grid Docs */
 #masthead { @include grid-row; @include panel;
-  & > hgroup { @include grid-column(4, $float:left); }
-  & > section { @include grid-column(8, $float:left); }
+  & > hgroup { @include grid-column(4, $float:$default-float); }
+  & > section { @include grid-column(8, $float:$default-float); }
 }
 
 /* Switch Docs */
@@ -178,10 +181,10 @@ input[type="text"].attached-input {
 }
 
 @media only screen and (min-width: 800px) {
-  .docs.header { float: left; }
+  .docs.header { float: $default-float; }
 
   .docs.subheader {
     margin-top: 38px;
-    float: right;
+    float: $opposite-direction;
   }
 }
